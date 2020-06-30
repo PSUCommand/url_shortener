@@ -18,7 +18,7 @@ def make_short():
         elif request.form['submit_button'] == 'Get URL!':
             user_url = request.form["text_field"]  # получить инфу из поля
             # проверка ссылки
-            if not check_url.check_url(user_url):
+            if not check_url.check_short_url(user_url):
                 abort(400)    # кидаем ошибку 404
             else:
                 return render_template("main_page.html", user_url=user_url)
@@ -31,9 +31,11 @@ def make_short():
 @app.route('/<short_url>', methods = ["GET"])
 def redirect_short_url(short_url):
     #TODO: проверка есть ли ссылка в БД
-    long_url = "https://2x2tv.ru/"
-    if long_url!="":
+    if check_url.check_short_url(short_url):
         return redirect(long_url)
+    #long_url = "https://2x2tv.ru/"
+    #if long_url!="":
+        #return redirect(long_url)
     else:
         abort(404)
 
