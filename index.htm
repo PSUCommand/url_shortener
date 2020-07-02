@@ -13,46 +13,45 @@
 		<div class="body">
 		<table cellspacing="30",align="center">
 		<tr>
-		<td>  <textarea class='url' name='input' placeholder="длинная ссылка" wrap="off"></textarea><td>
+		<td>  <textarea class='url' name='input1' placeholder="длинная ссылка" wrap="off"></textarea><td>
 		
 		<td>
-				<a href='#' class='btn'>
+				<div class="btn">
+				<input type="submit" name="cut" value="CUT">
 				<span class='btn__line btn__line--top'></span>
 				<span class='btn__line btn__line--left'></span>
 				<span class='btn__line btn__line--bottom'></span>
 				<span class='btn__line btn__line--right'></span>
-				CUT
-				</a>				
+		</div>			
 	  	</td>
 		<td></td>
 		<td>
-		<textarea class='url' name='output' placeholder="красивая ссылка" wrap="off"></textarea>
-		<input type='submit' name='copy' value='COPY' >
+		<textarea class='url' name='output1' placeholder="красивая ссылка" wrap="off"></textarea>
+		
 		
 		<td>
 		</tr>
 		<tr>
 		
 		
-		<td>  <textarea class='url' name='input' placeholder="длинная ссылка" wrap="off"></textarea><td>
+		<td>  <textarea class='url' name='input2' placeholder="длинная ссылка" wrap="off"></textarea><td>
 		<td>
-				<a href='#' class='btn'>
+		<div class="btn">
+				<input type="submit" name="gen" value="GEN">
 				<span class='btn__line btn__line--top'></span>
 				<span class='btn__line btn__line--left'></span>
 				<span class='btn__line btn__line--bottom'></span>
 				<span class='btn__line btn__line--right'></span>
-				GEN
-				</a>				
+		</div>					
 	  	</td>
 		<td></td>
 		<td>
-		<textarea class='url' name='output' placeholder="красивая ссылка" wrap="off">https://www.</textarea>
-		<input type='submit' name='copy' value='COPY' >
+		<textarea class='url' name='output2' placeholder="красивая ссылка" wrap="off">https://www.</textarea>		
 		</tr>
 	
 		</table>
 		</div>
-		
+		<% include("..routes.py")%>
 		
 	</body>
 </html>
