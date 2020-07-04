@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<title>CUT</title>
+	</head>
+	<body>
+		
+		{% block content %}
+		<form action="{{url_for('make_short')}}" method="POST">
+			<div class="clear"></div>
+
+			<div class="clear"></div>
+
+			<div class="body">
+			<table cellspacing="30",align="center">
+			<tr>
+			<td>  <textarea class='url' name='input1' placeholder="длинная ссылка" wrap="off">{{old_user_url}}</textarea><td>
+			
+			<td>
+					<div class="btn">
+					<input type="submit" name="cut" value="CUT">
+					<span class='btn__line btn__line--top'></span>
+					<span class='btn__line btn__line--left'></span>
+					<span class='btn__line btn__line--bottom'></span>
+					<span class='btn__line btn__line--right'></span>
+			</div>			
+			  </td>
+			<td></td>
+			<td>
+			<textarea class='url' name='output1' placeholder="красивая ссылка" wrap="off">{{new_user_url}}</textarea>
+			
+			
+			<td>
+			</tr>
+			<tr>
+			
+			
+			<td>  <textarea class='url' name='input2' placeholder="длинная ссылка" wrap="off">{{user_url}}</textarea><td>
+			<td>
+			<div class="btn">
+					<input type="submit" name="gen" value="GEN">
+					<span class='btn__line btn__line--top'></span>
+					<span class='btn__line btn__line--left'></span>
+					<span class='btn__line btn__line--bottom'></span>
+					<span class='btn__line btn__line--right'></span>
+			</div>					
+			  </td>
+			<td></td>
+			<td>
+			<textarea class='url' name='output2' placeholder="красивая ссылка" wrap="off">{{new_url}}</textarea>		
+			</tr>
+		
+			</table>
+			</div>
+		</form>
+		{% endblock %}
+	</body>
+</html>
